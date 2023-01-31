@@ -32,9 +32,13 @@ void Configuracion::setDimension(int newDimension)
 
 void Configuracion::setWidgetColor()
 {
+
     int r = m_color.yellow();
     int g = m_color.green();
     int b = m_color.blue();
+
+    //int r =m_color.
+
     QString style = "background-color: rgb(" + QString::number(r) + ", " + QString::number(g) + ", " + QString::number(b) + ")";
     ui->wigetColor->setStyleSheet(style);
 }
@@ -47,5 +51,13 @@ const QColor &Configuracion::color() const
 int Configuracion::dimension() const
 {
     return m_dimension;
+}
+
+
+void Configuracion::on_btnColor_clicked()
+{
+    m_color = QColorDialog::getColor(m_color,
+                                    this,
+                                    "Color del pincel");
 }
 

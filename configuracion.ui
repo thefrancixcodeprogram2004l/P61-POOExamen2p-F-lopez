@@ -37,6 +37,9 @@
         <property name="autoFillBackground">
          <bool>false</bool>
         </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(38, 162, 105);</string>
+        </property>
        </widget>
       </item>
       <item>

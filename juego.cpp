@@ -14,7 +14,7 @@ Juego::Juego(QWidget *parent)
     miImagen->fill(Qt::white);
     mPainter = new QPainter(miImagen);
     mPainter->setRenderHint(QPainter::Antialiasing);
-
+    dibujar();
 
 }
 
@@ -35,35 +35,35 @@ void Juego::paintEvent(QPaintEvent *event)
 
 void Juego::on_btnArriba_released()
 {
-
+    miImagen->fill(Qt::white);
     m_circulo->setY(m_circulo->getY()-1);
-
+    dibujar();
 }
 
 
 void Juego::on_btnAbajo_released()
 {
-
+    miImagen->fill(Qt::white);
     m_circulo->setY(m_circulo->getY()+1);
-
+    dibujar();
 }
 
 
 void Juego::on_btnIzqueirda_released()
 {
-
+    miImagen->fill(Qt::white);
     m_circulo->setX(m_circulo->getX()-1);
-
+    dibujar();
 }
 
 
 void Juego::on_btnDerecha_released()
 {
-
+    miImagen->fill(Qt::white);
     m_circulo->setX(m_circulo->getX()+1);
+    dibujar();
 
 }
-
 
 void Juego::on_actionConfigraci0n_triggered()
 {
@@ -83,6 +83,16 @@ void Juego::on_actionSalir_triggered()
 
 void Juego::dibujar()
 {
+    QPen pincel;
+    pincel.setWidth(5);
+    pincel.setColor(Qt::red);
+    pincel.setJoinStyle(Qt::MiterJoin);
+    //pincel.setColor(Qt::black);
+    pincel.setWidth(3);
+    // Dibujar una linea
+    mPainter->setPen(pincel);
+    mPainter->drawEllipse(m_circulo->getX(), m_circulo->getY(), m_circulo->getTamanio(), m_circulo->getTamanio());
+    update();
 }
 
 void Juego::on_marco_customContextMenuRequested(QPoint const&){
