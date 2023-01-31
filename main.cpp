@@ -1,5 +1,7 @@
-#include "juego.h"
+//nombre: francisco Lopez
 
+
+#include "juego.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])

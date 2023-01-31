@@ -1,13 +1,42 @@
 #include "circulo.h"
-
 Circulo::Circulo()
-    :QPoint(0,0)
-{
+{}
+Circulo::Circulo(int xpos, int ypos, int size):
+    y(ypos),
+    x(xpos),
+    tamanio(size)
+{}
 
+int Circulo::getTamanio() const
+{
+    return tamanio;
 }
 
-Circulo::Circulo(int xpos, int ypos)
-    :QPoint(xpos, ypos)
+void Circulo::setTamanio(int value)
 {
-
+    tamanio = value;
 }
+
+int Circulo::getY() const
+{
+    return y;
+}
+
+void Circulo::setY(int value)
+{
+    y = value;
+}
+
+int Circulo::getX() const
+{
+    return x;
+}
+
+void Circulo::setX(int value)
+{
+    x = value;
+}
+
+
+
+

@@ -6,7 +6,7 @@ Configuracion::Configuracion(QWidget *parent) :
     ui(new Ui::Configuracion)
 {
     ui->setupUi(this);
-    m_color.setRgb(165,29,45);
+    m_color.setRgb(167,22,49);
     setWidgetColor();
 }
 
@@ -32,7 +32,7 @@ void Configuracion::setDimension(int newDimension)
 
 void Configuracion::setWidgetColor()
 {
-    int r = m_color.red();
+    int r = m_color.yellow();
     int g = m_color.green();
     int b = m_color.blue();
     QString style = "background-color: rgb(" + QString::number(r) + ", " + QString::number(g) + ", " + QString::number(b) + ")";
