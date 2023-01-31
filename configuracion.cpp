@@ -1,12 +1,14 @@
 #include "configuracion.h"
 #include "ui_configuracion.h"
+#include <QRgb>
 
 Configuracion::Configuracion(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Configuracion)
 {
     ui->setupUi(this);
-    m_color.setRgb(167,22,49);
+
+    m_color.setRgb(200,78,90);
     setWidgetColor();
 }
 
@@ -33,14 +35,11 @@ void Configuracion::setDimension(int newDimension)
 void Configuracion::setWidgetColor()
 {
 
-    int r = m_color.yellow();
-    int g = m_color.green();
-    int b = m_color.blue();
-
-    //int r =m_color.
-
-    QString style = "background-color: rgb(" + QString::number(r) + ", " + QString::number(g) + ", " + QString::number(b) + ")";
-    ui->wigetColor->setStyleSheet(style);
+    int r = m_color.red();
+        int g = m_color.green();
+        int b = m_color.blue();
+        QString style = "background-color: rgb(" + QString::number(r) + ", " + QString::number(g) + ", " + QString::number(b) + ")";
+        ui->wigetColor->setStyleSheet(style);
 }
 
 const QColor &Configuracion::color() const
@@ -59,5 +58,11 @@ void Configuracion::on_btnColor_clicked()
     m_color = QColorDialog::getColor(m_color,
                                     this,
                                     "Color del pincel");
+}
+
+
+void Configuracion::on_inDimension_actionTriggered(int action)
+{
+    m_dimension=action;
 }
 

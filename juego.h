@@ -49,6 +49,8 @@ private:
     void dibujar();
     QImage *miImagen;
     QPainter *mPainter;
+    Configuracion *m_colo;
+    Configuracion *m_dimen;
 
 };
 #endif // JUEGO_H

@@ -83,12 +83,14 @@ void Juego::on_actionSalir_triggered()
 
 void Juego::dibujar()
 {
+    Configuracion *color =new Configuracion(this);
+
     QPen pincel;
-    pincel.setWidth(5);
-    pincel.setColor(Qt::red);
+    pincel.setWidth(10);
+    pincel.setColor(color->m_color);
     pincel.setJoinStyle(Qt::MiterJoin);
-    //pincel.setColor(Qt::black);
-    pincel.setWidth(3);
+    pincel.setColor(color->m_color);
+    pincel.setWidth(10);
     // Dibujar una linea
     mPainter->setPen(pincel);
     mPainter->drawEllipse(m_circulo->getX(), m_circulo->getY(), m_circulo->getTamanio(), m_circulo->getTamanio());
@@ -96,5 +98,4 @@ void Juego::dibujar()
 }
 
 void Juego::on_marco_customContextMenuRequested(QPoint const&){
-
 }

@@ -21,16 +21,19 @@ public:
 
     void setColor(const QColor &newColor);
     void setDimension(int newDimension);
+    QColor m_color;
+    int m_dimension;
 
 private slots:
     void on_btnColor_released();
 
     void on_btnColor_clicked();
 
+    void on_inDimension_actionTriggered(int action);
+
 private:
     Ui::Configuracion *ui;
-    QColor m_color;
-    int m_dimension;
+
 
     void setWidgetColor();
 };
